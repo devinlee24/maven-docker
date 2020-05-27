@@ -6,5 +6,5 @@ VOLUME /tmp
 ARG JAR_FILE_PATH
 #复制本地文件至容器里指定的路径(跟ADD指令功能相似)
 COPY ${JAR_FILE_PATH} maven-docker.jar
-#指定docker容器启动时执行的命令
-ENTRYPOINT ["java", "-jar","maven-docker.jar"]
+#指定docker容器启动时执行的命令(为了缩短Tomcat启动时间，添加一个系统属性指向 “/dev/./urandom” 作为Entropy Source)
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "maven-docker.jar"]
