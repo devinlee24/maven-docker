@@ -12,7 +12,7 @@
 
     <groupId>com.devinlee</groupId>
     <artifactId>maven-docker</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>maven-docker</name>
     <description>Demo project for Spring Boot</description>
 
@@ -49,7 +49,6 @@
 
             <!-- maven docker build -->
             <plugin>
-                <!-- 打包命令：mvn clean package dockerfile:build -DskipTests-->
                 <!-- 注意：需要在Maven setting.xml配置文件的<pluginGroups>节点中加入<pluginGroup>com.spotify</pluginGroup>白名单！ -->
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
